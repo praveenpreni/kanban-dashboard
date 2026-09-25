@@ -13,7 +13,7 @@ export default function App() {
         <div className="mx-auto w-full max-w-6xl">
           <header className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Kanban Task Manager</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Kanban Task Manager — Project 02</h1>
               <p className="mt-1 text-sm text-gray-600">
                 Create tasks, drag between columns, and persist changes locally.
               </p>
