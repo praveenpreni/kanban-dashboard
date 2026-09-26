@@ -82,7 +82,9 @@ Deployment failure restores and rechecks the previous release. First deployment 
 | 3 | FAIL_AFTER_DEPLOY=true, intentional FAILURE; previous release restored and validated |
 | 4 | FAIL_AFTER_DEPLOY=false, SUCCESS |
 
-Build 4 image: `praveen09it/kanban-dashboard:4-79eb5c0e87ae`.
+Build 5 was subsequently observed healthy on the live host after the README update (image `5-9bb66c94053a`).
+
+Build 4 independently tested image: `praveen09it/kanban-dashboard:4-79eb5c0e87ae`.
 
 ## Webhook
 
@@ -105,7 +107,7 @@ Archived evidence includes image/container inspection, secret scan JSON, logs, H
 
 ## Independent pull verification
 
-The pipeline pulled the pushed image on EC2, which also built it. The separate clean-environment pull/run test is pending and is not claimed as completed.
+Independent pull/run verification passed on 26 September 2026 on a separate fresh Ubuntu 24.04 EC2 host (i-0bdfea7db086201f8, 13.127.202.254). Docker was installed on the empty host and image 4-79eb5c0e87ae was pulled from Docker Hub without copying or building source. The container was healthy, ran as 10001:10001 with 128 MiB memory, 0.5 CPU, a 100-process limit and read-only root filesystem. HTTP health and HTML checks passed. See evidence/clean-machine-pull.txt.
 
 ## Reproduction and cleanup
 
